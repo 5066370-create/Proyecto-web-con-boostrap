@@ -1,0 +1,4085 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Complejo Educativo "10 de octubre 1987"</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root {
+            --azul-marino: #1A365D;
+            --azul-institucional: #2B6CB0;
+            --dorado-accent: #D69E2E;
+            --verde-exito: #28a745;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .bg-azul-marino {
+            background-color: var(--azul-marino) !important;
+        }
+
+        .bg-azul-inst {
+            background-color: var(--azul-institucional) !important;
+        }
+
+        .text-azul-marino {
+            color: var(--azul-marino) !important;
+        }
+
+        .text-azul-inst {
+            color: var(--azul-institucional) !important;
+        }
+
+        .btn-dorado {
+            background-color: var(--dorado-accent);
+            color: white;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-dorado:hover {
+            background-color: #b7811d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .logo-elsalvador {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .main-content {
+            padding-top: 75px;
+        }
+
+        .carousel-item img {
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .app-section {
+            display: none;
+            padding-top: 25px;
+            padding-bottom: 60px;
+            animation: fadeIn 0.35s ease-in-out;
+        }
+
+        .app-section.active-section {
+            display: block !important;
+        }
+
+        @keyframes fadeIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .card {
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+
+        /* ============================= */
+        /* NOSOTROS */
+        /* ============================= */
+
+        .nosotros-menu {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .nosotros-opcion {
+            border: none;
+            background: white;
+            border-radius: 15px;
+            padding: 25px 20px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            color: var(--azul-marino);
+        }
+
+        .nosotros-opcion:hover {
+            background-color: var(--azul-institucional);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .nosotros-opcion i {
+            font-size: 2.5rem;
+            color: var(--azul-institucional);
+            margin-bottom: 12px;
+        }
+
+        .nosotros-opcion:hover i {
+            color: white;
+        }
+
+        .nosotros-opcion:hover p {
+            color: white !important;
+        }
+
+        .nosotros-contenido {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .nosotros-contenido p {
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .valor-item {
+            margin-bottom: 18px;
+        }
+
+        /* ============================= */
+        /* TOUR DEL COMPLEJO */
+        /* ============================= */
+
+        .tour-complejo {
+            background: linear-gradient(135deg, #ffffff, #f1f6fb);
+            border-radius: 22px;
+            padding: 30px;
+            margin-bottom: 45px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 1px solid #e9ecef;
+        }
+
+        .tour-titulo {
+            display: inline-block;
+            background: var(--azul-marino);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .video-tour {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            border: 5px solid white;
+        }
+
+        .video-tour video {
+            width: 100%;
+            display: block;
+            max-height: 550px;
+            object-fit: cover;
+        }
+
+        /* ============================= */
+        /* UBICACIÓN */
+        /* ============================= */
+
+        .ubicacion-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .ubicacion-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--azul-institucional);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .ubicacion-mapa {
+            height: 220px;
+            background:
+                linear-gradient(
+                    rgba(43,108,176,0.12),
+                    rgba(43,108,176,0.12)
+                ),
+                repeating-linear-gradient(
+                    45deg,
+                    #e9ecef,
+                    #e9ecef 10px,
+                    #dee2e6 10px,
+                    #dee2e6 12px
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ubicacion-mapa i {
+            font-size: 5rem;
+            color: #dc3545;
+        }
+
+        .ubicacion-texto {
+            background: white;
+            padding: 20px;
+        }
+
+        /* ============================= */
+        /* FORMULARIOS */
+        /* ============================= */
+
+        .formulario-matricula {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .grado-seleccionado {
+            background-color: #eaf2fb;
+            border-left: 5px solid var(--azul-institucional);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* ============================= */
+        /* CONFIRMACIÓN */
+        /* ============================= */
+
+        .success-card {
+            animation: popIn 0.5s ease;
+            background: white;
+            border-radius: 24px;
+        }
+
+        .icon-success-wrapper {
+            width: 100px;
+            height: 100px;
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--verde-exito);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes popIn {
+
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+        /* ============================= */
+        /* GALERÍA AMPLIADA */
+        /* ============================= */
+
+        .galeria-imagen {
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .galeria-imagen:hover {
+            transform: scale(1.02);
+        }
+
+        #modalGaleriaArea .modal-content {
+            background: #111;
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        #modalGaleriaArea .modal-header {
+            background: var(--azul-marino);
+            color: white;
+            border-bottom: none;
+        }
+
+        #modalGaleriaArea .carousel-item {
+            text-align: center;
+            background: #111;
+        }
+
+        #modalGaleriaArea .carousel-item img {
+            width: 100%;
+            height: 75vh;
+            max-height: 700px;
+            object-fit: contain;
+        }
+
+        #modalGaleriaArea .carousel-control-prev,
+        #modalGaleriaArea .carousel-control-next {
+            width: 12%;
+        }
+
+        .btn-cerrar-galeria {
+            background-color: var(--dorado-accent);
+            color: white;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-cerrar-galeria:hover {
+            background-color: #b7811d;
+            color: white;
+        }
+
+        .mensaje-inscripcion-exito {
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .mensaje-inscripcion-exito .icono-exito {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--verde-exito);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================================================= -->
+<!-- MENÚ PRINCIPAL -->
+<!-- ================================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-azul-marino fixed-top shadow">
+
+    <div class="container">
+
+        <a class="navbar-brand d-flex align-items-center gap-2 nav-target"
+           href="#"
+           data-target="inicio">
+
+            <img src="logo de la escuela.jpg"
+                 alt="Escudo El Salvador"
+                 class="logo-elsalvador">
+
+            <span>
+                Complejo Educativo "10 de octubre 1987"
+            </span>
+
+        </a>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto fs-6 gap-2">
+
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link text-white btn-nav nav-target active"
+                            id="btn-inicio"
+                            data-target="inicio">
+                        Inicio
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link text-white btn-nav nav-target"
+                            id="btn-nosotros"
+                            data-target="nosotros">
+                        Nosotros
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link text-white btn-nav nav-target"
+                            id="btn-oferta"
+                            data-target="oferta">
+                        Oferta Académica
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link text-white btn-nav nav-target"
+                            id="btn-admisiones"
+                            data-target="admisiones">
+                        Admisiones
+                    </button>
+                </li>
+
+                <li class="nav-item">
+                    <button type="button"
+                            class="nav-link text-white btn-nav nav-target"
+                            id="btn-contacto"
+                            data-target="contacto">
+                        Contacto
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="container main-content">
+
+
+<!-- ================================================= -->
+<!-- INICIO -->
+<!-- ================================================= -->
+
+<section id="inicio" class="app-section active-section">
+
+    <div id="carouselInicio"
+         class="carousel slide rounded-4 overflow-hidden shadow-lg mb-5"
+         data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+
+            <button type="button"
+                    data-bs-target="#carouselInicio"
+                    data-bs-slide-to="0"
+                    class="active">
+            </button>
+
+            <button type="button"
+                    data-bs-target="#carouselInicio"
+                    data-bs-slide-to="1">
+            </button>
+
+        </div>
+
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active"
+                 data-bs-interval="4000">
+
+                <img src="porton original.jpg"
+                     class="d-block w-100"
+                     alt="Instalaciones">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+
+                    <h3 class="fw-bold">
+                        Complejo Educativo "10 de octubre 1987"
+                    </h3>
+
+                    <p>
+                        Formando líderes con valores y alta calidad educativa.
+                    </p>
+
+                    <button type="button"
+                            class="btn btn-dorado btn-lg me-2 nav-target"
+                            data-target="admisiones">
+
+                        Proceso de Admisión
+
+                    </button>
+
+                    <button type="button"
+                            class="btn btn-outline-light btn-lg nav-target"
+                            data-target="oferta">
+
+                        Conoce Más
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="carousel-item"
+                 data-bs-interval="4000">
+
+                <img src="estudiantes.jpeg"
+
+                     class="d-block w-100"
+                     alt="Aulas">
+
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+
+                    <h3 class="fw-bold">
+                        Tecnología e Innovación Pedagógica
+                    </h3>
+
+                    <p>
+                        Aulas equipadas para potenciar el aprendizaje continuo.
+                    </p>
+
+                    <button type="button"
+                            class="btn btn-dorado btn-lg"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalInscripcion">
+
+                        Inscripción Rápida
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselInicio"
+                data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+
+        <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselInicio"
+                data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- OPCIONES PRINCIPALES -->
+    <!-- ============================= -->
+
+    <div class="row text-center g-4 mb-5">
+
+        <div class="col-md-6">
+
+            <button type="button"
+                    class="card h-100 border-0 shadow-sm p-3 w-100"
+                    data-inicio-opcion="docentes"
+                    style="cursor:pointer;">
+
+                <div class="card-body">
+
+                    <i class="bi bi-people-fill fs-1 text-azul-inst"></i>
+
+                    <h4 class="card-title text-azul-marino mt-3">
+                        Planta Docente
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Conoce nuestra planta docente y el compromiso de nuestros profesionales.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <button type="button"
+                    class="card h-100 border-0 shadow-sm p-3 w-100"
+                    data-inicio-opcion="areas"
+                    style="cursor:pointer;">
+
+                <div class="card-body">
+
+                    <i class="bi bi-building fs-1 text-azul-inst"></i>
+
+                    <h4 class="card-title text-azul-marino mt-3">
+                        Áreas del Complejo Educativo
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Conoce los diferentes espacios e instalaciones de nuestra institución.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <button type="button"
+                    class="card h-100 border-0 shadow-sm p-3 w-100"
+                    data-inicio-opcion="propuesta"
+                    style="cursor:pointer;">
+
+                <div class="card-body">
+
+                    <i class="bi bi-lightbulb-fill fs-1 text-azul-inst"></i>
+
+                    <h4 class="card-title text-azul-marino mt-3">
+                        Propuesta de Valor
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Conoce nuestra propuesta de valor y el compromiso de nuestra institución.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <button type="button"
+                    class="card h-100 border-0 shadow-sm p-3 w-100"
+                    data-inicio-opcion="noticias"
+                    style="cursor:pointer;">
+
+                <div class="card-body">
+
+                    <i class="bi bi-newspaper fs-1 text-azul-inst"></i>
+
+                    <h4 class="card-title text-azul-marino mt-3">
+                        Noticias
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Mantente informado sobre las actividades y novedades.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- MATRÍCULAS -->
+    <!-- ============================= -->
+
+    <div class="bg-azul-inst text-white p-4 rounded-4 shadow-sm">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8 text-center text-lg-start mb-3 mb-lg-0">
+
+                <h3 class="mb-1">
+                    Matrículas Abiertas
+                </h3>
+
+                <p class="mb-0">
+                    Accede directamente al formulario de inscripción o solicita información.
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-4 text-center text-lg-end">
+
+                <button type="button"
+                        class="btn btn-dorado me-2 nav-target"
+                        data-target="admisiones">
+
+                    Ir a Admisiones
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-light nav-target"
+                        data-target="contacto">
+
+                    Soporte Técnico
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PLANTA DOCENTE -->
+<!-- ================================================= -->
+
+<section id="planta-docente" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-azul-marino border-bottom pb-3 mb-0">
+                Planta Docente
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-inicio">
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Inicio
+            </button>
+        </div>
+
+        <p class="lead text-center mb-4">
+            Nuestro personal docente y administrativo trabaja con compromiso
+            para brindar una educación de calidad a los estudiantes.
+        </p>
+
+       <div class="row justify-content-center g-4 mb-4">
+
+    <div class="col-md-6">
+        <img src="docentes mañana.jpg"
+             class="img-fluid rounded shadow"
+             alt="Planta Docente - Turno Matutino"
+             style="width:100%; height:350px; object-fit:cover;">
+
+        <h4 class="text-center text-azul-marino mt-3">
+            Planta Docente - Turno Matutino
+        </h4>
+    </div>
+
+    <div class="col-md-6">
+        <img src="docente tarde.jpg"
+             class="img-fluid rounded shadow"
+             alt="Planta Docente - Turno Vespertino"
+             style="width:100%; height:350px; object-fit:cover;">
+
+        <h4 class="text-center text-azul-marino mt-3">
+            Planta Docente - Turno Vespertino
+        </h4>
+    </div>
+
+</div>
+
+        <div class="row g-4">
+
+            <!-- PARVULARIA -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">
+                            <i class="bi bi-mortarboard-fill me-2"></i>
+                            Parvularia 4, 5 y 6
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm p-3">
+                                    <h5>María Maribel Leiva Leiva</h5>
+                                    <p class="mb-0">Parvularia 4 años</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm p-3">
+                                    <h5>Antolina Ramírez Rivera</h5>
+                                    <p class="mb-0">Parvularia 5 años</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm p-3">
+                                    <h5>Marcos Argentina Laínez</h5>
+                                    <p class="mb-0">Parvularia 6 años</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRIMARIA / BÁSICA -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">
+                            <i class="bi bi-book-fill me-2"></i>
+                            Educación Primaria / Básica
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Ana Bartola Laínez Escamilla</h5><p class="mb-0">Primer Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Rosa Angelica Henríquez de Torres</h5><p class="mb-0">Segundo Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María Gladis Hernández Alfaro</h5><p class="mb-0">Tercer Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María Magdalena Hernández de Mejía</h5><p class="mb-0">Tercer Grado “B”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María Marta Marina López Laínez</h5><p class="mb-0">Cuarto Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María de los Ángeles Recinos Leiva</h5><p class="mb-0">Quinto Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Vilma Gloria Hernández Hernández</h5><p class="mb-0">Quinto Grado “B”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Milagros Celina Hernández Alfaro</h5><p class="mb-0">Sexto Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Karla Cristina Del Cid Mijango</h5><p class="mb-0">Sexto Grado “B”</p></div></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECUNDARIA / BACHILLERATO -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">
+                            <i class="bi bi-journal-bookmark-fill me-2"></i>
+                            Educación Secundaria / Bachillerato
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Yeny Nohemí Torres de Fuentes</h5><p class="mb-0">Séptimo Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Saúl Antonio Hernández</h5><p class="mb-0">Séptimo Grado “B”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Mártir Antonio Beltrán Membreño</h5><p class="mb-0">Octavo Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María Dora Alicia Laínez Escamilla</h5><p class="mb-0">Octavo Grado “B”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>María Hilda Recinos Castillo</h5><p class="mb-0">Noveno Grado “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>José Enrique Rivas Rivas</h5><p class="mb-0">Primer año de bachillerato “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Ramón Alfaro Veliz</h5><p class="mb-0">Primer Año de Bachillerato “B”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>José Leonardo Rivas Rivas</h5><p class="mb-0">Primer Año de Bachillerato “C”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Isidra Villalobos García</h5><p class="mb-0">Segundo Año de Bachillerato “A”</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>William Orlando Alejo</h5><p class="mb-0">Primer y Segundo año de bachillerato</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Carlos Antonio Ayala Flores</h5><p class="mb-0">Primer y Segundo año de bachillerato</p></div></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FÍSICA -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">Docente de Física</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Marina del Carmen Alvarenga Leiva</h5>
+                        <p class="mb-0">Desde educación primaria hasta bachillerato</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADMINISTRATIVO -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">Personal Administrativo</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Ana Miriam López Rivas</strong> — Secretaria</p>
+                        <p><strong>María Julia Asensio Asencio</strong> — Ordenanza</p>
+                        <p class="mb-0"><strong>María Hilda Mijango Laínez</strong> — Bibliotecaria</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIRECCIÓN -->
+            <div class="col-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header text-white bg-azul-inst">
+                        <h4 class="mb-0">Dirección</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Beatriz Karina Gómez Mejía</h5><p class="mb-0">Directora</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Sandra Elizabeth Rodríguez Ramírez</h5><p class="mb-0">Subdirectora Turno Matutino</p></div></div>
+                            <div class="col-md-4"><div class="card h-100 border-0 shadow-sm p-3"><h5>Ana Gladis Beltrán de Portillo</h5><p class="mb-0">Subdirectora Turno Vespertino</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================================================= -->
+
+<section id="planta-docente" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="text-azul-marino border-bottom pb-3 mb-0">
+                Planta Docente
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-inicio">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Inicio
+
+            </button>
+
+        </div>
+
+
+        <div class="text-center mb-4">
+
+            <i class="bi bi-people-fill text-azul-inst"
+               style="font-size:4rem;">
+            </i>
+
+            <h3 class="text-azul-marino mt-3">
+                Nuestra Planta Docente
+            </h3>
+
+            <p class="text-muted">
+                Profesionales comprometidos con la formación integral de nuestros estudiantes.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+
+                <div class="card border-0 shadow-sm h-100 p-3">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-person-badge fs-1 text-azul-inst"></i>
+
+                        <h4 class="text-azul-marino mt-3">
+                            Personal Docente
+                        </h4>
+
+                        <p class="text-muted">
+                            La institución cuenta con docentes dedicados al acompañamiento académico y personal de los estudiantes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <div class="card border-0 shadow-sm h-100 p-3">
+
+                    <div class="card-body text-center">
+
+                        <i class="bi bi-mortarboard-fill fs-1 text-azul-inst"></i>
+
+                        <h4 class="text-azul-marino mt-3">
+                            Compromiso Educativo
+                        </h4>
+
+                        <p class="text-muted">
+                            Nuestros docentes trabajan para brindar una educación de calidad basada en conocimientos y valores.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- AREAS DEL COMPLEJO -->
+<!-- ================================================= -->
+
+<section id="areas-complejo" class="app-section">
+
+    <div class="nosotros-menu">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="text-azul-marino">
+                Áreas del Complejo Educativo
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-inicio">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Inicio
+
+            </button>
+
+        </div>
+
+
+        <!-- TOUR DEL COMPLEJO EDUCATIVO -->
+
+        <div class="tour-complejo">
+
+            <div class="text-center mb-4">
+
+                <div class="tour-titulo">
+                    <i class="bi bi-camera-video-fill me-2"></i>
+                    Tour del Complejo Educativo
+                </div>
+
+                <p class="text-muted mt-3 mb-0">
+                    Realiza un recorrido por nuestras instalaciones.
+                </p>
+
+            </div>
+
+            <div class="video-tour">
+
+                <video controls playsinline preload="metadata">
+                    <source src="tour.mp4.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mb-5">
+
+            <i class="bi bi-building text-azul-inst"
+               style="font-size:4rem;">
+            </i>
+
+            <h3 class="text-azul-marino mt-3">
+                Nuestras instalaciones
+            </h3>
+
+            <p class="text-muted">
+                Selecciona un área para ver sus fotografías.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="aulas123">
+
+                    <i class="bi bi-door-open"></i>
+
+                    <h4>Aulas 1, 2 y 3</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce las aulas 1, 2 y 3.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="aulas456">
+
+                    <i class="bi bi-door-open"></i>
+
+                    <h4>Aulas 4, 5 y 6</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce las aulas 4, 5 y 6.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="aulas78910">
+
+                    <i class="bi bi-door-open"></i>
+
+                    <h4>Aulas 7, 8, 9 y 10</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce las aulas 7, 8, 9 y 10.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="aulas11121314">
+
+                    <i class="bi bi-door-open"></i>
+
+                    <h4>Aulas 11, 12, 13 y 14</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce las aulas 11, 12, 13 y 14.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="banos">
+
+                    <i class="bi bi-droplet"></i>
+
+                    <h4>Baños</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce el área de baños.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="biblioteca">
+
+                    <i class="bi bi-book"></i>
+
+                    <h4>Biblioteca</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestra biblioteca.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="direccion">
+
+                    <i class="bi bi-person-workspace"></i>
+
+                    <h4>Dirección</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce el área de dirección.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="sum">
+
+                    <i class="bi bi-building"></i>
+
+                    <h4>Salón de Usos Múltiples</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestro salón de usos múltiples.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="laboratorio">
+
+                    <i class="bi bi-flask"></i>
+
+                    <h4>Laboratorio</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestro laboratorio.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="computo">
+
+                    <i class="bi bi-pc-display"></i>
+
+                    <h4>Sala de Computo</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestra sala de computo.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="cafetin">
+
+                    <i class="bi bi-cup-hot"></i>
+
+                    <h4>Cafetín</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce el área de cafetín.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="huerto">
+
+                    <i class="bi bi-flower1"></i>
+
+                    <h4>Huerto Escolar</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestro huerto escolar.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-area="maestros">
+
+                    <i class="bi bi-people"></i>
+
+                    <h4>Sala de Maestros</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce nuestra sala de maestros.
+                    </p>
+
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- GALERIA -->
+<!-- ================================================= -->
+
+<section id="galeria-area" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 id="titulo-area"
+                class="text-azul-marino border-bottom pb-3 mb-0">
+                Área
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-areas">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Áreas
+
+            </button>
+
+        </div>
+
+
+        <div id="fotos-area"
+             class="row g-4">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PROPUESTA DE VALOR -->
+<!-- ================================================= -->
+
+<section id="propuesta-valor" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="text-azul-marino border-bottom pb-3 mb-0">
+                Propuesta de Valor
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-inicio">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Inicio
+
+            </button>
+
+        </div>
+
+
+        <div class="text-center mb-4">
+
+            <i class="bi bi-lightbulb-fill text-azul-inst"
+               style="font-size:4rem;">
+            </i>
+
+            <h3 class="text-azul-marino mt-3">
+                Nuestra Propuesta de Valor
+            </h3>
+
+        </div>
+
+
+        <p>
+            El Complejo Educativo "10 de octubre 1987" ofrece una formación
+            integral orientada al desarrollo académico, personal y social
+            de sus estudiantes.
+        </p>
+
+        <p>
+            Nuestra propuesta busca fortalecer los conocimientos, valores,
+            habilidades y capacidades de los estudiantes, promoviendo una
+            educación de calidad, inclusiva y comprometida con las necesidades
+            de la comunidad.
+        </p>
+
+
+        <div class="row g-4 mt-3">
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 text-center p-3">
+
+                    <i class="bi bi-mortarboard-fill fs-1 text-azul-inst"></i>
+
+                    <h5 class="text-azul-marino mt-3">
+                        Formación Integral
+                    </h5>
+
+                    <p class="text-muted">
+                        Promovemos el desarrollo académico y personal
+                        de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 text-center p-3">
+
+                    <i class="bi bi-heart-fill fs-1 text-azul-inst"></i>
+
+                    <h5 class="text-azul-marino mt-3">
+                        Valores
+                    </h5>
+
+                    <p class="text-muted">
+                        Fomentamos el respeto, la responsabilidad,
+                        la solidaridad y la convivencia.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 text-center p-3">
+
+                    <i class="bi bi-people-fill fs-1 text-azul-inst"></i>
+
+                    <h5 class="text-azul-marino mt-3">
+                        Compromiso con la Comunidad
+                    </h5>
+
+                    <p class="text-muted">
+                        Trabajamos junto a la comunidad para contribuir
+                        al desarrollo de nuestros estudiantes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- NOTICIAS -->
+<!-- ================================================= -->
+
+<section id="noticias" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h2 class="text-azul-marino border-bottom pb-3 mb-0">
+                Noticias
+            </h2>
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-inicio">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Inicio
+
+            </button>
+
+        </div>
+
+
+        <div class="text-center mb-4">
+
+            <i class="bi bi-newspaper text-azul-inst"
+               style="font-size:4rem;">
+            </i>
+
+            <h3 class="text-azul-marino mt-3">
+                Noticias del Complejo Educativo
+            </h3>
+
+            <p class="text-muted">
+                En este espacio se publicarán las actividades,
+                eventos y novedades de nuestra institución.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- NOTICIA 1 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="yohana.jpeg"
+                         class="card-img-top"
+                         alt="Yohana Alexandra Láinez Otero"
+                         style="height:250px; object-fit:cover;">
+
+                    <div class="card-body">
+
+                        <h5 class="text-azul-marino mt-2">
+                            Yohana Alexandra Láinez Otero
+                        </h5>
+
+                        <p class="text-muted">
+                            Yohana Alexandra Láinez Otero, estudiante del Complejo Educativo 10 de Octubre 1987, de la comunidad Santa Marta, obtuvo el primer lugar en la competencia nacional de los Juegos Deportivos Estudiantiles 2024, en la disciplina de lanzamiento de jabalina.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTICIA 2 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="https://resources.finalsite.net/images/f_auto,q_auto,t_image_size_2/v1739982244/psesdorg/cm8byttvcmvq2zn6mw4k/KiraLearningLogo_Transparent.png"
+                         class="card-img-top"
+                         alt="Kira Learning"
+                         style="height:250px; object-fit:contain; padding:20px;">
+
+                    <div class="card-body">
+
+                        <h5 class="text-azul-marino mt-2">
+                            Kira Learning
+                        </h5>
+
+                        <p class="text-muted">
+                            El Complejo Educativo 210 de Octubre de 19872 forma parte del grupo de instituciones que ya operan activamente con la plataforma tecnológica Kira Learning. Con esta incorporación, el centro educativo ha comenzado a utilizar herramientas basadas en inteligencia artificial para la enseñanza de informática y computación. La plataforma permite a los estudiantes trabajar con tutores interactivos que adaptan el ritmo de aprendizaje a sus capacidades, mientras que el cuerpo docente aprovecha los módulos automatizados para la asignación de proyectos y la evaluación de contenidos en tiempo real.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTICIA 3 -->
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLDvOhHHE6BpVLdAdcawpKVqKODl3pM_8oH0sNLJ9gkU5qZI16X3bIw3k&s=10"
+                         class="card-img-top"
+                         alt="Fiction Express"
+                         style="height:250px; object-fit:contain; padding:20px;">
+
+                    <div class="card-body">
+
+                        <h5 class="text-azul-marino mt-2">
+                            Fiction Express
+                        </h5>
+
+                        <p class="text-muted">
+                            El Complejo Educativo “10 de Octubre 1987” forma parte de las instituciones que ya utilizan activamente la plataforma Fiction Express para potenciar la comprensión lectora de sus estudiantes. Con esta incorporación tecnológica, el alumnado interactúa semanalmente en la cocreación de historias con autores profesionales, mientras que los docentes monitorean en tiempo real el progreso, el vocabulario y la fluidez lectora de cada estudiante.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- NOSOTROS -->
+<!-- ================================================= -->
+
+<section id="nosotros" class="app-section">
+
+    <div class="nosotros-menu">
+
+        <div class="text-center mb-5">
+
+            <h2 class="text-azul-marino">
+                Nosotros
+            </h2>
+
+            <p class="text-muted">
+                Conoce más sobre el Complejo Educativo "10 de octubre 1987"
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-nosotros="historia">
+
+                    <i class="bi bi-clock-history"></i>
+
+                    <h4>Historia</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce los orígenes y el desarrollo de nuestra institución.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-nosotros="mision">
+
+                    <i class="bi bi-compass"></i>
+
+                    <h4>Misión</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce el propósito y compromiso de nuestra institución.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-nosotros="vision">
+
+                    <i class="bi bi-eye"></i>
+
+                    <h4>Visión</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce hacia dónde queremos dirigir nuestra institución.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-nosotros="valores">
+
+                    <i class="bi bi-heart"></i>
+
+                    <h4>Valores</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce los valores que promovemos en nuestra comunidad educativa.
+                    </p>
+
+                </button>
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+                <button type="button"
+                        class="nosotros-opcion"
+                        data-nosotros="proyectos">
+
+                    <i class="bi bi-lightbulb"></i>
+
+                    <h4>Proyectos pedagógicos</h4>
+
+                    <p class="mb-0 text-muted">
+                        Conoce los proyectos y actividades pedagógicas de la institución.
+                    </p>
+
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- HISTORIA -->
+<!-- ================================================= -->
+
+<section id="nosotros-historia" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Historia
+        </h2>
+
+        <p>
+            El Complejo Educativo “10 de Octubre 1987” está ubicado en Santa Marta,
+            una comunidad rural perteneciente al distrito de Victoria, municipio de
+            Cabañas Este, departamento de Cabañas. La institución educativa tiene
+            sus orígenes en el año 1987, cuando se produjo la llegada del primer
+            grupo de refugiados que retornó desde Mesa Grande, Honduras, hacia la
+            comunidad de Santa Marta.
+        </p>
+
+        <p>
+            Con el retorno de las familias surgió la necesidad de establecer un
+            espacio educativo para atender a los niños y niñas de la comunidad.
+            De esta manera, con el esfuerzo y la organización de los habitantes de
+            Santa Marta, comenzaron las primeras actividades educativas.
+        </p>
+
+        <p>
+            Los primeros profesores eran miembros de la comunidad y desempeñaron
+            su labor educativa a pesar de no contar con títulos universitarios ni
+            formación profesional como docentes. A pesar de estas limitaciones,
+            su disposición y compromiso permitieron que la educación pudiera
+            comenzar y mantenerse en la comunidad durante los primeros años.
+        </p>
+
+        <p>
+            Con el paso del tiempo, el centro educativo fue creciendo y surgió
+            la necesidad de fortalecer la preparación académica de los docentes.
+            Entre los años 2002 y 2003, los profesores que habían iniciado esta
+            labor lograron obtener sus títulos.
+        </p>
+
+        <p>
+            Posteriormente, en el año 2004, fueron contratados los primeros
+            20 docentes. Este acontecimiento marcó una nueva etapa para el
+            centro educativo.
+        </p>
+
+        <p>
+            Durante sus primeros años, el centro educativo recibió el apoyo
+            de la Cooperación Internacional, que contribuyó a su funcionamiento
+            y desarrollo desde sus inicios. Sin embargo, a partir del año 2004,
+            el Ministerio de Educación asumió completamente la responsabilidad
+            del funcionamiento y sostenimiento del centro educativo.
+        </p>
+
+        <p>
+            Desde su fundación en 1987, el Complejo Educativo “10 de Octubre 1987”
+            ha formado parte del crecimiento y desarrollo de la comunidad de
+            Santa Marta. Su historia refleja el esfuerzo de sus habitantes para
+            garantizar que los niños y jóvenes de la comunidad tuvieran acceso
+            a la educación.
+        </p>
+
+
+        <div class="text-center mt-4">
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-nosotros">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Nosotros
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- MISIÓN -->
+<!-- ================================================= -->
+
+<section id="nosotros-mision" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Misión
+        </h2>
+
+        <p>
+            Brindar una educación integral, inclusiva y de calidad a los niños,
+            niñas y jóvenes de la comunidad de Santa Marta, promoviendo el
+            desarrollo de conocimientos, habilidades, valores y actitudes que
+            les permitan desenvolverse de manera responsable en la sociedad.
+        </p>
+
+        <p>
+            El Complejo Educativo busca formar estudiantes capaces de enfrentar
+            los diferentes desafíos de la vida, fomentando el respeto,
+            la responsabilidad, la solidaridad, la convivencia y el compromiso
+            con su comunidad.
+        </p>
+
+        <div class="text-center mt-4">
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-nosotros">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Nosotros
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- VISIÓN -->
+<!-- ================================================= -->
+
+<section id="nosotros-vision" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Visión
+        </h2>
+
+        <p>
+            Ser una institución educativa reconocida por brindar una formación
+            integral y de calidad, comprometida con el desarrollo académico,
+            personal y social de sus estudiantes.
+        </p>
+
+        <p>
+            Se busca que el Complejo Educativo continúe fortaleciendo sus
+            procesos de enseñanza y aprendizaje, promoviendo una comunidad
+            educativa participativa, responsable e inclusiva.
+        </p>
+
+        <div class="text-center mt-4">
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-nosotros">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Nosotros
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- VALORES -->
+<!-- ================================================= -->
+
+<section id="nosotros-valores" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Valores
+        </h2>
+
+        <p>
+            El Complejo Educativo promueve valores fundamentales para la
+            formación de sus estudiantes y para una adecuada convivencia
+            dentro y fuera de la institución.
+        </p>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Respeto</h5>
+            <p>
+                Promover el trato digno hacia los demás, aceptando las diferencias
+                y reconociendo los derechos de cada persona.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Responsabilidad</h5>
+            <p>
+                Cumplir con las obligaciones y compromisos escolares y personales.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Solidaridad</h5>
+            <p>
+                Fomentar la colaboración y el apoyo entre los miembros de la
+                comunidad educativa.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Honestidad</h5>
+            <p>
+                Actuar con sinceridad, transparencia y rectitud.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Tolerancia</h5>
+            <p>
+                Respetar las opiniones, ideas y formas de ser de otras personas.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Compromiso</h5>
+            <p>
+                Participar de manera activa y responsable en las actividades educativas.
+            </p>
+        </div>
+
+
+        <div class="valor-item">
+            <h5 class="text-azul-inst">Cooperación</h5>
+            <p>
+                Trabajar conjuntamente entre estudiantes, docentes, familias
+                y comunidad para alcanzar objetivos comunes.
+            </p>
+        </div>
+
+
+        <div class="text-center mt-4">
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-nosotros">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Nosotros
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- PROYECTOS PEDAGÓGICOS -->
+<!-- ================================================= -->
+
+<section id="nosotros-proyectos" class="app-section">
+
+    <div class="nosotros-contenido">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Proyectos pedagógicos
+        </h2>
+
+        <p>
+            Los proyectos pedagógicos del Complejo Educativo “10 de Octubre 1987”
+            están orientados a complementar el aprendizaje de los estudiantes
+            mediante actividades que permiten relacionar los conocimientos
+            adquiridos en el aula con situaciones de la vida cotidiana.
+        </p>
+
+        <p>
+            Entre las actividades y proyectos se encuentran los relacionados
+            con el cuidado y protección del medio ambiente, actividades culturales
+            y artísticas, promoción de la lectura, actividades deportivas,
+            proyectos de convivencia escolar y acciones orientadas a fortalecer
+            la participación de los estudiantes y la comunidad educativa.
+        </p>
+
+        <p>
+            Estos proyectos permiten que los estudiantes aprendan de una manera
+            más práctica y participativa, desarrollando habilidades como el
+            trabajo en equipo, la creatividad, la responsabilidad y la comunicación.
+        </p>
+
+        <div class="text-center mt-4">
+
+            <button type="button"
+                    class="btn btn-dorado btn-volver-nosotros">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver a Nosotros
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- OFERTA ACADÉMICA -->
+<!-- ================================================= -->
+
+<section id="oferta" class="app-section">
+    <div class="nosotros-menu">
+        <div class="text-center mb-5">
+            <h2 class="text-azul-marino">Oferta Académica</h2>
+            <p class="text-muted">Selecciona una opción para conocer nuestra oferta académica.</p>
+        </div>
+        <div class="d-flex flex-column gap-3">
+            <button type="button" class="nosotros-opcion text-start" data-oferta="oferta-parvularia"><i class="bi bi-puzzle"></i><h4>Educación Parvularia</h4><p class="mb-0 text-muted">Conoce los niveles y grados disponibles.</p></button>
+            <button type="button" class="nosotros-opcion text-start" data-oferta="oferta-primaria"><i class="bi bi-book"></i><h4>Educación Primaria / Básica</h4><p class="mb-0 text-muted">Conoce los grados de educación primaria y básica.</p></button>
+            <button type="button" class="nosotros-opcion text-start" data-oferta="oferta-secundaria"><i class="bi bi-journal-bookmark"></i><h4>Educación Secundaria / Bachillerato</h4><p class="mb-0 text-muted">Conoce los grados de secundaria y bachillerato.</p></button>
+            <button type="button" class="nosotros-opcion text-start" data-oferta="oferta-extracurriculares"><i class="bi bi-trophy"></i><h4>Actividades Extracurriculares y Deportes</h4><p class="mb-0 text-muted">Conoce las actividades y deportes disponibles.</p></button>
+        </div>
+    </div>
+</section>
+
+<section id="oferta-parvularia" class="app-section">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h2 class="text-azul-marino border-bottom pb-3 mb-0"><i class="bi bi-puzzle text-azul-inst me-2"></i>Educación Parvularia</h2>
+        <button type="button" class="btn bg-azul-inst text-white btn-volver-oferta"><i class="bi bi-arrow-left me-2"></i>Volver a Oferta Académica</button>
+    </div>
+    <div class="tab-content bg-white p-4 rounded-4 shadow-sm">
+<p class="text-muted mb-4">
+                Estimulación temprana y desarrollo socioafectivo en entornos dinámicos y seguros.
+            </p>
+<div class="row g-3">
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm text-center p-3">
+<h5 class="fw-bold text-azul-marino">
+                            Kínder 4
+                        </h5>
+<p class="text-muted small">
+                            Desarrollo motor y convivencia social inicial.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Kínder 4" type="button">
+
+                            Matricularse
+
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm text-center p-3">
+<h5 class="fw-bold text-azul-marino">
+                            Kínder 5
+                        </h5>
+<p class="text-muted small">
+                            Estimulación cognitiva y expresión artística.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Kínder 5" type="button">
+
+                            Matricularse
+
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm text-center p-3">
+<h5 class="fw-bold text-azul-marino">
+                            Kínder 6
+                        </h5>
+<p class="text-muted small">
+                            Aprestamiento lectoescritor y preparación primaria.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Kínder 6" type="button">
+
+                            Matricularse
+
+                        </button>
+</div>
+</div>
+</div>
+    </div>
+</section>
+
+<section id="oferta-primaria" class="app-section">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h2 class="text-azul-marino border-bottom pb-3 mb-0"><i class="bi bi-book text-azul-inst me-2"></i>Educación Primaria / Básica</h2>
+        <button type="button" class="btn bg-azul-inst text-white btn-volver-oferta"><i class="bi bi-arrow-left me-2"></i>Volver a Oferta Académica</button>
+    </div>
+    <div class="tab-content bg-white p-4 rounded-4 shadow-sm">
+<p class="text-muted mb-4">
+                Formación fundamental en pensamiento lógico, comprensión lectora,
+                ciencias y valores.
+            </p>
+<div class="row g-3">
+<script>
+</script>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Primer Grado</h5>
+<p class="text-muted small">Iniciación en lectura, escritura y cálculo básico.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Primer Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Segundo Grado</h5>
+<p class="text-muted small">Consolidación de la lectura fluida y operaciones básicas.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Segundo Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Tercer Grado</h5>
+<p class="text-muted small">Desarrollo del razonamiento y habilidades sociales.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Tercer Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Cuarto Grado</h5>
+<p class="text-muted small">Profundización en ciencias naturales y ciencias sociales.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Cuarto Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Quinto Grado</h5>
+<p class="text-muted small">Pensamiento crítico y proyectos colaborativos.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Quinto Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Sexto Grado</h5>
+<p class="text-muted small">Preparación integral para la transición a la educación secundaria.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Sexto Grado" type="button">Matricularse</button>
+</div>
+</div>
+</div>
+    </div>
+</section>
+
+<section id="oferta-secundaria" class="app-section">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h2 class="text-azul-marino border-bottom pb-3 mb-0"><i class="bi bi-journal-bookmark text-azul-inst me-2"></i>Educación Secundaria / Bachillerato</h2>
+        <button type="button" class="btn bg-azul-inst text-white btn-volver-oferta"><i class="bi bi-arrow-left me-2"></i>Volver a Oferta Académica</button>
+    </div>
+    <div class="tab-content bg-white p-4 rounded-4 shadow-sm">
+<p class="text-muted mb-4">
+                Desarrollo de competencias académicas, analíticas y metodológicas
+                orientadas a la educación superior.
+            </p>
+<div class="row g-3">
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Séptimo Grado</h5>
+<p class="text-muted small">Adaptación a la educación secundaria y nuevas disciplinas.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Séptimo Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Octavo Grado</h5>
+<p class="text-muted small">Reforzamiento en ciencias, matemáticas y expresión verbal.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Octavo Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<h5 class="fw-bold text-azul-marino">Noveno Grado</h5>
+<p class="text-muted small">Cierre del tercer ciclo con énfasis en proyectos académicos.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Noveno Grado" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card h-100 border shadow-sm p-4 text-center">
+<h5 class="fw-bold text-azul-marino">Primer Año de Bachillerato</h5>
+<p class="text-muted">Formación académica avanzada, desarrollo metodológico e investigación.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Primer Año de Bachillerato" type="button">Matricularse</button>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card h-100 border shadow-sm p-4 text-center">
+<h5 class="fw-bold text-azul-marino">Segundo Año de Bachillerato</h5>
+<p class="text-muted">Preparación para la educación superior y la vida profesional.</p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Segundo Año de Bachillerato" type="button">Matricularse</button>
+</div>
+</div>
+</div>
+    </div>
+</section>
+
+<section id="oferta-extracurriculares" class="app-section">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <h2 class="text-azul-marino border-bottom pb-3 mb-0"><i class="bi bi-trophy text-azul-inst me-2"></i>Actividades Extracurriculares y Deportes</h2>
+        <button type="button" class="btn bg-azul-inst text-white btn-volver-oferta"><i class="bi bi-arrow-left me-2"></i>Volver a Oferta Académica</button>
+    </div>
+    <div class="tab-content bg-white p-4 rounded-4 shadow-sm">
+<p class="text-muted mb-4">
+                Espacios formativos para promover el trabajo en equipo,
+                la disciplina, la cultura y el talento deportivo.
+            </p>
+<div class="row g-3">
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-music-note-beamed fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Banda de Paz
+                        </h5>
+<p class="text-muted small">
+                            Formación musical, ritmo, disciplina e identidad institucional.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Banda de Paz" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-dribbble fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Fútbol
+                        </h5>
+<p class="text-muted small">
+                            Entrenamiento táctico, trabajo en equipo y competencias interescolares.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Fútbol" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-slash-circle fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Béisbol
+                        </h5>
+<p class="text-muted small">
+                            Desarrollo de destrezas y estrategia de juego.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Béisbol" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-activity fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Voleibol
+                        </h5>
+<p class="text-muted small">
+                            Reflejos, coordinación y espíritu de colaboración.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Voleibol" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-record-circle fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Balonmano
+                        </h5>
+<p class="text-muted small">
+                            Agilidad, resistencia física y dinamismo táctico.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Balonmano" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-people fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Baile
+                        </h5>
+<p class="text-muted small">
+                            Expresión corporal, coordinación rítmica y coreografías.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Baile" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-basket fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Baloncesto
+                        </h5>
+<p class="text-muted small">
+                            Tiro, dominio del balón y acondicionamiento físico.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Baloncesto" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-stars fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Mañanitas Recreativas
+                        </h5>
+<p class="text-muted small">
+                            Actividades recreativas para promover la convivencia,
+                            participación y diversión.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Mañanitas Recreativas" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card h-100 border shadow-sm p-3 text-center">
+<i class="bi bi-book-half fs-1 text-azul-inst mb-2"></i>
+<h5 class="fw-bold text-azul-marino">
+                            Escuelas Libres
+                        </h5>
+<p class="text-muted small">
+                            Espacios educativos y formativos para fortalecer
+                            habilidades y conocimientos.
+                        </p>
+<button class="btn bg-azul-inst text-white mt-auto btn-matricular" data-grado="Extracurricular - Escuelas Libres" type="button">
+                            Inscribirse
+                        </button>
+</div>
+</div>
+</div>
+    </div>
+</section>
+
+<!-- ================================================= -->
+<!-- MATRÍCULA -->
+<!-- ================================================= -->
+
+<section id="matricula-oferta" class="app-section">
+
+    <div class="formulario-matricula">
+
+        <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+            Formulario de Matrícula
+        </h2>
+
+
+        <div class="grado-seleccionado">
+
+            <strong>
+                Opción seleccionada:
+            </strong>
+
+            <span id="gradoSeleccionado"></span>
+
+        </div>
+
+
+        <form id="formMatriculaOferta">
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Nombres del estudiante
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Apellidos del estudiante
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Fecha de nacimiento
+                    </label>
+
+                    <input type="date"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Género
+                    </label>
+
+                    <select class="form-select" required>
+
+                        <option value="">
+                            Seleccionar
+                        </option>
+
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Número de Identificación Estudiantil (NIE)
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Año lectivo
+                    </label>
+
+                    <select class="form-select" required>
+
+                        <option value="">
+                            Seleccionar
+                        </option>
+
+                        <option>2026</option>
+                        <option>2027</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Nombre del padre o encargado
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-bold">
+                        Teléfono de contacto
+                    </label>
+
+                    <input type="tel"
+                           class="form-control"
+                           required>
+
+                </div>
+
+
+                <div class="col-12">
+
+                    <label class="form-label fw-bold">
+                        Dirección
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <div class="d-flex gap-2 mt-4">
+
+                <button type="submit"
+                        class="btn btn-dorado flex-grow-1 py-3">
+
+                    <i class="bi bi-send-fill me-2"></i>
+                    Enviar Matrícula
+
+                </button>
+
+
+                <button type="button"
+                        class="btn btn-outline-secondary px-4"
+                        id="volverOferta">
+
+                    Volver
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ADMISIONES -->
+<!-- ================================================= -->
+
+<section id="admisiones" class="app-section">
+
+    <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+        Admisiones
+    </h2>
+
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="bg-azul-marino text-white p-4 rounded-4 shadow-sm h-100">
+
+                <h3>
+                    Inscripción Online
+                </h3>
+
+                <p class="mt-3 text-white-50">
+                    Completa la información requerida del estudiante
+                    para procesar la solicitud de ingreso.
+                </p>
+
+                <ol class="lh-lg mt-4 ps-3">
+
+                    <li>
+                        Llena los datos personales del estudiante.
+                    </li>
+
+                    <li>
+                        Ingresa el NIE y selecciona el grado o actividad.
+                    </li>
+
+                    <li>
+                        Presiona el botón para enviar el formulario.
+                    </li>
+
+                    <li>
+                        El sistema confirmará el envío.
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-sm p-4">
+
+                <h4 class="text-azul-marino mb-4">
+
+                    <i class="bi bi-file-earmark-text text-azul-inst me-2"></i>
+
+                    Formulario de Inscripción Online
+
+                </h4>
+
+
+                <form id="formAdmisiones">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Nombres del estudiante
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Apellidos del estudiante
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Fecha de nacimiento
+                            </label>
+
+                            <input type="date"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Género
+                            </label>
+
+                            <select class="form-select" required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Número de Identificación Estudiantil (NIE)
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Año lectivo correspondiente
+                            </label>
+
+                            <select class="form-select" required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <option>2026</option>
+                                <option>2027</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-12">
+
+                            <label class="form-label fw-bold">
+                                Grado o actividad al que solicita ingresar
+                            </label>
+
+                            <select class="form-select"
+                                    required>
+
+                                <option value="">
+                                    Seleccionar
+                                </option>
+
+                                <optgroup label="Educación Parvularia">
+
+                                    <option>Kínder 4</option>
+                                    <option>Kínder 5</option>
+                                    <option>Kínder 6</option>
+
+                                </optgroup>
+
+
+                                <optgroup label="Educación Primaria / Básica">
+
+                                    <option>Primer Grado</option>
+                                    <option>Segundo Grado</option>
+                                    <option>Tercer Grado</option>
+                                    <option>Cuarto Grado</option>
+                                    <option>Quinto Grado</option>
+                                    <option>Sexto Grado</option>
+
+                                </optgroup>
+
+
+                                <optgroup label="Educación Secundaria / Bachillerato">
+
+                                    <option>Séptimo Grado</option>
+                                    <option>Octavo Grado</option>
+                                    <option>Noveno Grado</option>
+                                    <option>Primer Año de Bachillerato</option>
+                                    <option>Segundo Año de Bachillerato</option>
+
+                                </optgroup>
+
+
+                                <optgroup label="Actividades Extracurriculares y Deportes">
+
+                                    <option>Banda de Paz</option>
+                                    <option>Fútbol</option>
+                                    <option>Béisbol</option>
+                                    <option>Voleibol</option>
+                                    <option>Balonmano</option>
+                                    <option>Baile</option>
+                                    <option>Baloncesto</option>
+                                    <option>Mañanitas Recreativas</option>
+                                    <option>Escuelas Libres</option>
+
+                                </optgroup>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Nombre del padre o encargado
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <label class="form-label fw-bold">
+                                Teléfono de contacto
+                            </label>
+
+                            <input type="tel"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn btn-dorado w-100 py-3 fs-5 mt-4 shadow-sm">
+
+                        <i class="bi bi-send-fill me-2"></i>
+
+                        Enviar Formulario de Inscripción
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CONFIRMACIÓN -->
+<!-- ================================================= -->
+
+<section id="confirmacion" class="app-section">
+
+    <div class="row justify-content-center py-4">
+
+        <div class="col-md-9 col-lg-7 text-center">
+
+            <div class="card border-0 shadow-lg p-5 success-card">
+
+                <div class="card-body">
+
+                    <div class="icon-success-wrapper">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                    </div>
+
+
+                    <h1 class="display-6 fw-bold text-azul-marino mb-3">
+                        Formulario Enviado
+                    </h1>
+
+
+                    <p class="lead text-muted mb-4">
+                        ¡Muchas gracias! La solicitud ha sido registrada con éxito
+                        en el sistema del Complejo Educativo "10 de octubre 1987".
+                    </p>
+
+
+                    <div class="bg-light p-4 rounded-4 mb-4 text-start shadow-sm border">
+
+                        <div class="d-flex align-items-center mb-2">
+
+                            <i class="bi bi-info-circle-fill text-azul-inst fs-5 me-2"></i>
+
+                            <span class="fw-bold text-azul-marino">
+                                ¿Qué sucede ahora?
+                            </span>
+
+                        </div>
+
+
+                        <ul class="text-muted small mb-0 ps-4 lh-lg">
+
+                            <li>
+                                Nuestro equipo académico revisará la información ingresada.
+                            </li>
+
+                            <li>
+                                Nos pondremos en contacto vía telefónica.
+                            </li>
+
+                            <li>
+                                Recibirás las indicaciones correspondientes para finalizar el proceso.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+
+                        <button type="button"
+                                class="btn btn-dorado btn-lg px-4 nav-target"
+                                data-target="inicio">
+
+                            <i class="bi bi-house-door-fill me-2"></i>
+                            Volver al Inicio
+
+                        </button>
+
+
+                        <button type="button"
+                                class="btn btn-outline-secondary btn-lg px-4 nav-target"
+                                data-target="admisiones">
+
+                            <i class="bi bi-plus-circle me-2"></i>
+                            Nueva Inscripción
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CONTACTO -->
+<!-- ================================================= -->
+
+<section id="contacto" class="app-section">
+
+    <h2 class="text-azul-marino border-bottom pb-3 mb-4">
+        Contacto
+    </h2>
+
+
+    <div class="row g-4">
+
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm p-4 h-100">
+
+                <h4 class="text-azul-marino mb-3">
+                    Envíanos un Mensaje
+                </h4>
+
+
+                <form id="formContacto">
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Nombre
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               required>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Correo o Teléfono
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               required>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Mensaje
+                        </label>
+
+                        <textarea class="form-control"
+                                  rows="4"
+                                  required>
+                        </textarea>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn bg-azul-inst text-white fw-bold">
+
+                        Enviar
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-sm p-4 h-100">
+
+                <h4 class="text-azul-marino mb-3">
+                    Información Institucional
+                </h4>
+
+
+                <ul class="list-unstyled lh-lg">
+
+                    <li class="mb-2">
+
+                        <i class="bi bi-geo-alt-fill text-azul-inst me-2"></i>
+
+                        <strong>Dirección:</strong>
+
+                        Comunidad Santa Marta, Cabañas, El Salvador, Colonia El Campo
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <i class="bi bi-telephone-fill text-azul-inst me-2"></i>
+
+                        <strong>Teléfono:</strong>
+
+                        +503 7851-5659
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <i class="bi bi-envelope-fill text-azul-inst me-2"></i>
+
+                        <strong>Correo:</strong>
+
+                        beatriz.karina.gomez@clases.edu.sv
+
+                    </li>
+
+
+                    <li class="mb-2">
+
+                        <i class="bi bi-clock-fill text-azul-inst me-2"></i>
+
+                        <strong>Horarios:</strong>
+
+                        <ul class="mb-0 ps-4 text-muted">
+
+                            <li>
+                                Matutino de 7:00am - 12:00pm
+                            </li>
+
+                            <li>
+                                Vespertino de 1:00pm - 6:00pm
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+
+                <h5 class="text-azul-marino mt-4 mb-2">
+
+                    <i class="bi bi-geo-alt-fill text-azul-inst me-2"></i>
+
+                    Ubicación
+
+                </h5>
+
+
+                <a href="https://maps.app.goo.gl/5b2vtRwGUHrZCuS4A"
+                   target="_blank"
+                   class="ubicacion-card">
+
+                    <div class="ubicacion-mapa">
+
+                        <i class="bi bi-geo-alt-fill"></i>
+
+                    </div>
+
+
+                    <div class="ubicacion-texto">
+
+                        <h5 class="text-azul-marino mb-2">
+                            Comunidad Santa Marta
+                        </h5>
+
+                        <p class="text-muted mb-2">
+                            Cabañas, El Salvador, Colonia El Campo
+                        </p>
+
+                        <span class="btn btn-sm btn-dorado">
+
+                            <i class="bi bi-map me-1"></i>
+
+                            Ver ubicación en Google Maps
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <hr>
+
+
+                <h5 class="text-azul-marino mb-3">
+                    Redes Sociales
+                </h5>
+
+
+                <div class="d-flex align-items-center gap-2">
+
+                    <a href="#"
+                       class="text-azul-inst text-decoration-none d-flex align-items-center gap-2 fw-semibold fs-6">
+
+                        <i class="bi bi-facebook fs-3"></i>
+
+                        <span>
+                            Complejo Educativo "10 de octubre 1987"
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- MODAL GALERÍA -->
+<!-- ================================================= -->
+
+<div class="modal fade"
+     id="modalGaleriaArea"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="tituloModalGaleria">
+                    Galería
+                </h5>
+
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar">
+                </button>
+
+            </div>
+
+            <div class="modal-body p-0">
+
+                <div id="carouselGaleriaArea"
+                     class="carousel slide"
+                     data-bs-interval="false">
+
+                    <div class="carousel-inner"
+                         id="fotosGaleriaAmpliada">
+                    </div>
+
+                    <button class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselGaleriaArea"
+                            data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon"></span>
+
+                    </button>
+
+                    <button class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselGaleriaArea"
+                            data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon"></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer justify-content-center bg-light">
+
+                <button type="button"
+                        class="btn btn-cerrar-galeria"
+                        data-bs-dismiss="modal">
+
+                    <i class="bi bi-x-circle me-2"></i>
+                    Cerrar galería
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- MODAL -->
+<!-- ================================================= -->
+
+<div class="modal fade"
+     id="modalInscripcion"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-azul-marino text-white">
+
+                <h5 class="modal-title">
+                    Inscripción Rápida
+                </h5>
+
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <form id="formModal">
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Nombre completo
+                        </label>
+
+                        <input type="text"
+                               class="form-control"
+                               required>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+                            Teléfono
+                        </label>
+
+                        <input type="tel"
+                               class="form-control"
+                               required>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn btn-dorado w-100">
+
+                        Solicitar Información
+
+                    </button>
+
+                </form>
+
+                <div id="mensajeInscripcionExito"
+                     class="mensaje-inscripcion-exito d-none">
+
+                    <div class="icono-exito">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+
+                    <h4 class="text-azul-marino fw-bold">
+                        ¡Mensaje enviado!
+                    </h4>
+
+                    <p class="text-muted mb-4">
+                        Hemos recibido tu solicitud de información.
+                        <br>
+                        <strong>Espera noticias de nuestra institución.</strong>
+                    </p>
+
+                    <button type="button"
+                            class="btn btn-dorado"
+                            data-bs-dismiss="modal">
+
+                        <i class="bi bi-check-lg me-2"></i>
+                        Cerrar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- BOOTSTRAP -->
+<!-- ================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT CORREGIDO -->
+<!-- ================================================= -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+    /* ==========================================
+       MOSTRAR SECCIONES
+    ========================================== */
+
+    function showSection(sectionId) {
+
+        const sections = document.querySelectorAll('.app-section');
+
+        sections.forEach(function(section) {
+            section.classList.remove('active-section');
+        });
+
+
+        const target = document.getElementById(sectionId);
+
+        if (target) {
+            target.classList.add('active-section');
+        }
+
+
+        const navLinks = document.querySelectorAll('.btn-nav');
+
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+
+        const activeButton =
+            document.getElementById('btn-' + sectionId);
+
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+
+
+        const navbar =
+            document.getElementById('navbarNav');
+
+        if (navbar && navbar.classList.contains('show')) {
+
+            const collapse =
+                bootstrap.Collapse.getInstance(navbar) ||
+                new bootstrap.Collapse(navbar);
+
+            collapse.hide();
+        }
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    }
+
+
+    /* ==========================================
+       MOSTRAR INFORMACIÓN DE NOSOTROS
+    ========================================== */
+
+    function showNosotros(opcion) {
+
+        const sections =
+            document.querySelectorAll('.app-section');
+
+        sections.forEach(function(section) {
+            section.classList.remove('active-section');
+        });
+
+
+        const seccion =
+            document.getElementById('nosotros-' + opcion);
+
+        if (seccion) {
+            seccion.classList.add('active-section');
+        }
+
+
+        const navLinks =
+            document.querySelectorAll('.btn-nav');
+
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+
+        const nosotrosBtn =
+            document.getElementById('btn-nosotros');
+
+        if (nosotrosBtn) {
+            nosotrosBtn.classList.add('active');
+        }
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    }
+
+
+    /* ==========================================
+       DATOS DE LAS GALERÍAS
+    ========================================== */
+
+    const datosAreas = {
+
+        aulas123: {
+            titulo: 'Aulas 1, 2 y 3',
+            fotos: [
+                'Aulas 1, 2 y 3.jpeg',
+             ]   
+        },
+
+        aulas456: {
+            titulo: 'Aulas 4, 5 y 6',
+            fotos: [
+                'Aulas 4, 5 y 6.jpeg',
+                
+            ]
+        },
+
+        aulas78910: {
+            titulo: 'Aulas 7, 8, 9 y 10',
+            fotos: [
+                'Aulas 7, 8, 9 y 10.jpeg',
+                
+            ]
+        },
+
+        aulas11121314: {
+            titulo: 'Aulas 11, 12, 13 y 14',
+            fotos: [
+                'Aulas 11, 12, 13 y 14.jpeg',
+                
+            ]
+        },
+
+        banos: {
+            titulo: 'Baños',
+            fotos: [
+                'Baños 1.jpeg',
+                'Baños 2.jpeg'
+            ]
+        },
+
+        biblioteca: {
+            titulo: 'Biblioteca',
+            fotos: [
+                'Biblioteca 1.jpeg',
+                'Biblioteca 2.jpeg',
+                
+            ]
+        },
+
+        direccion: {
+            titulo: 'Dirección',
+            fotos: [
+                'Direccion 1.jpeg',
+                'Direccion 2.jpeg'
+            ]
+        },
+
+        sum: {
+            titulo: 'Salón de Usos Múltiples',
+            fotos: [
+                'Salon 1.jpeg',
+                'Salon 2.jpeg',
+                'Salon 3.jpeg'
+            ]
+        },
+
+        laboratorio: {
+            titulo: 'Laboratorio',
+            fotos: [
+                'Laboratorio 1.jpeg',
+                'Laboratorio 2.jpeg',
+                'Laboratorio 3.jpeg',
+               
+            ]
+        },
+
+        computo: {
+            titulo: 'Sala de Computo',
+            fotos: [
+                'Informatica 1.jpeg',
+                'Informatica 2.jpeg'
+            ]
+        },
+
+        cafetin: {
+            titulo: 'Cafetín',
+            fotos: [
+                'Cafetin.jpeg',
+        ]
+        },
+
+        huerto: {
+            titulo: 'Huerto Escolar',
+            fotos: [
+                'Huerto Escolar 1.jpeg',
+                'Huerto Escolar 2.jpeg',
+                'Huerto Escolar 3.jpeg'
+            ]
+        },
+
+        maestros: {
+            titulo: 'Sala de Maestros',
+            fotos: [
+                'Sala de maestros 1.jpeg',
+                'Sala de maestros 2.jpeg'
+            ]
+        }
+
+    };
+
+
+    /* ==========================================
+       MOSTRAR GALERÍA
+    ========================================== */
+
+    function mostrarGaleriaArea(area) {
+
+        const datos = datosAreas[area];
+
+        if (!datos) {
+            return;
+        }
+
+
+        document.getElementById('titulo-area').textContent =
+            datos.titulo;
+
+
+        const contenedor =
+            document.getElementById('fotos-area');
+
+        contenedor.innerHTML = '';
+
+
+        datos.fotos.forEach(function(foto, index) {
+
+            contenedor.innerHTML += `
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="card border-0 shadow-sm h-100 overflow-hidden">
+
+                        <img src="${foto}"
+                             class="card-img-top galeria-imagen"
+                             alt="${datos.titulo} - Foto ${index + 1}"
+                             style="height:250px; object-fit:cover;"
+                             data-galeria-area="${area}"
+                             data-galeria-index="${index}">
+
+                        <div class="card-body text-center">
+
+                            <p class="mb-0 text-muted">
+                                ${datos.titulo}
+                            </p>
+
+                            <small class="text-azul-inst">
+                                <i class="bi bi-arrows-fullscreen me-1"></i>
+                                Ver fotografía ampliada
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        showSection('galeria-area');
+
+    }
+
+
+    /* ==========================================
+       ABRIR GALERÍA AMPLIADA
+    ========================================== */
+
+    function abrirGaleriaAmpliada(area, indiceInicial) {
+
+        const datos = datosAreas[area];
+
+        if (!datos) {
+            return;
+        }
+
+        const contenedor =
+            document.getElementById('fotosGaleriaAmpliada');
+
+        const titulo =
+            document.getElementById('tituloModalGaleria');
+
+        contenedor.innerHTML = '';
+
+        titulo.textContent = datos.titulo;
+
+        datos.fotos.forEach(function(foto, index) {
+
+            contenedor.innerHTML += `
+
+                <div class="carousel-item ${index === indiceInicial ? 'active' : ''}">
+
+                    <img src="${foto}"
+                         alt="${datos.titulo} - Foto ${index + 1}">
+
+                </div>
+
+            `;
+
+        });
+
+        const controles =
+            document.querySelectorAll(
+                '#carouselGaleriaArea .carousel-control-prev, #carouselGaleriaArea .carousel-control-next'
+            );
+
+        controles.forEach(function(control) {
+
+            if (datos.fotos.length <= 1) {
+                control.classList.add('d-none');
+            } else {
+                control.classList.remove('d-none');
+            }
+
+        });
+
+        const modalElemento =
+            document.getElementById('modalGaleriaArea');
+
+        const modal =
+            bootstrap.Modal.getOrCreateInstance(modalElemento);
+
+        modal.show();
+
+    }
+
+
+    /* ==========================================
+       EVENTO GENERAL DE CLIC
+    ========================================== */
+
+    document.addEventListener('click', function(e) {
+
+
+        /* OPCIONES DEL INICIO */
+
+        const inicioOpcion =
+            e.target.closest('[data-inicio-opcion]');
+
+        if (inicioOpcion) {
+
+            e.preventDefault();
+
+            const opcion =
+                inicioOpcion.getAttribute('data-inicio-opcion');
+
+
+            if (opcion === 'docentes') {
+                showSection('planta-docente');
+            }
+
+            else if (opcion === 'areas') {
+                showSection('areas-complejo');
+            }
+
+            else if (opcion === 'propuesta') {
+                showSection('propuesta-valor');
+            }
+
+            else if (opcion === 'noticias') {
+                showSection('noticias');
+            }
+
+            return;
+        }
+
+
+        /* OPCIONES DE OFERTA ACADÉMICA */
+
+        const ofertaOpcion = e.target.closest('[data-oferta]');
+
+        if (ofertaOpcion) {
+            e.preventDefault();
+            const oferta = ofertaOpcion.getAttribute('data-oferta');
+            showSection(oferta);
+            return;
+        }
+
+        /* VOLVER A OFERTA ACADÉMICA */
+
+        const volverOfertaMenu = e.target.closest('.btn-volver-oferta');
+
+        if (volverOfertaMenu) {
+            e.preventDefault();
+            showSection('oferta');
+            return;
+        }
+
+
+        /* OPCIONES DE ÁREAS */
+
+        const areaOpcion =
+            e.target.closest('[data-area]');
+
+        if (areaOpcion) {
+
+            e.preventDefault();
+
+            const area =
+                areaOpcion.getAttribute('data-area');
+
+            mostrarGaleriaArea(area);
+
+            return;
+        }
+
+
+        /* ABRIR FOTOGRAFÍA AMPLIADA */
+
+        const imagenGaleria =
+            e.target.closest('[data-galeria-area]');
+
+        if (imagenGaleria) {
+
+            e.preventDefault();
+
+            const area =
+                imagenGaleria.getAttribute('data-galeria-area');
+
+            const indice =
+                parseInt(imagenGaleria.getAttribute('data-galeria-index'), 10);
+
+            abrirGaleriaAmpliada(area, indice);
+
+            return;
+        }
+
+
+        /* VOLVER A ÁREAS */
+
+        const volverAreas =
+            e.target.closest('.btn-volver-areas');
+
+        if (volverAreas) {
+
+            e.preventDefault();
+
+            showSection('areas-complejo');
+
+            return;
+        }
+
+
+        /* VOLVER A INICIO */
+
+        const volverInicio =
+            e.target.closest('.btn-volver-inicio');
+
+        if (volverInicio) {
+
+            e.preventDefault();
+
+            showSection('inicio');
+
+            return;
+        }
+
+
+        /* NAVEGACIÓN PRINCIPAL */
+
+        const navTarget =
+            e.target.closest('.nav-target');
+
+        if (navTarget) {
+
+            e.preventDefault();
+
+            const target =
+                navTarget.getAttribute('data-target');
+
+            if (target) {
+                showSection(target);
+            }
+
+            return;
+        }
+
+
+        /* OPCIONES DE NOSOTROS */
+
+        const nosotrosOpcion =
+            e.target.closest('[data-nosotros]');
+
+        if (nosotrosOpcion) {
+
+            e.preventDefault();
+
+            const opcion =
+                nosotrosOpcion.getAttribute('data-nosotros');
+
+            if (opcion) {
+                showNosotros(opcion);
+            }
+
+            return;
+        }
+
+
+        /* VOLVER A NOSOTROS */
+
+        const volverNosotros =
+            e.target.closest('.btn-volver-nosotros');
+
+        if (volverNosotros) {
+
+            e.preventDefault();
+
+            showSection('nosotros');
+
+            return;
+        }
+
+
+        /* BOTONES DE MATRÍCULA */
+
+        const btnMatricular =
+            e.target.closest('.btn-matricular');
+
+        if (btnMatricular) {
+
+            e.preventDefault();
+
+            const grado =
+                btnMatricular.getAttribute('data-grado');
+
+
+            document.getElementById(
+                'gradoSeleccionado'
+            ).textContent = grado;
+
+
+            showSection('matricula-oferta');
+
+            return;
+        }
+
+    });
+
+
+    /* ==========================================
+       VOLVER A OFERTA
+    ========================================== */
+
+    const volverOferta =
+        document.getElementById('volverOferta');
+
+    if (volverOferta) {
+
+        volverOferta.addEventListener('click', function() {
+
+            showSection('oferta');
+
+        });
+
+    }
+
+
+    /* ==========================================
+       FORMULARIO MATRÍCULA
+    ========================================== */
+
+    const formOferta =
+        document.getElementById('formMatriculaOferta');
+
+    if (formOferta) {
+
+        formOferta.addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            showSection('confirmacion');
+
+            this.reset();
+
+        });
+
+    }
+
+
+    /* ==========================================
+       FORMULARIO ADMISIONES
+    ========================================== */
+
+    const formAdm =
+        document.getElementById('formAdmisiones');
+
+    if (formAdm) {
+
+        formAdm.addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            showSection('confirmacion');
+
+            this.reset();
+
+        });
+
+    }
+
+
+    /* ==========================================
+       FORMULARIO CONTACTO
+    ========================================== */
+
+    const formContacto =
+        document.getElementById('formContacto');
+
+    if (formContacto) {
+
+        formContacto.addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            alert('¡Mensaje enviado correctamente!');
+
+            this.reset();
+
+        });
+
+    }
+
+
+    /* ==========================================
+       MODAL
+    ========================================== */
+
+    const formModal =
+        document.getElementById('formModal');
+
+    if (formModal) {
+
+        formModal.addEventListener('submit', function(e) {
+
+            e.preventDefault();
+
+            this.reset();
+
+            this.classList.add('d-none');
+
+            document.getElementById(
+                'mensajeInscripcionExito'
+            ).classList.remove('d-none');
+
+        });
+
+    }
+
+
+    const modalInscripcion =
+        document.getElementById('modalInscripcion');
+
+    if (modalInscripcion) {
+
+        modalInscripcion.addEventListener('hidden.bs.modal', function() {
+
+            const form =
+                document.getElementById('formModal');
+
+            const mensaje =
+                document.getElementById('mensajeInscripcionExito');
+
+            if (form) {
+                form.classList.remove('d-none');
+            }
+
+            if (mensaje) {
+                mensaje.classList.add('d-none');
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
